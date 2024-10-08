@@ -63,7 +63,7 @@ export const userLoginController=async(req, res)=>{
     const token = user.generateToken()
     delete {...user.password}
 
-    res.status(200).send({
+    res.status(200).cookie().send({
         success:true,
         token,
         userInfo:user,
